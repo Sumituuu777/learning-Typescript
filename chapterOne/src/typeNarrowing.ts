@@ -1,0 +1,28 @@
+// is function me ${kind .} par . lagakar dekhoge to uske datatype wale suggestion hi dega
+function chai(kind : string|number){
+    if(typeof kind ==="string"){
+        return `chai ${kind} is here` // yaha string wale suggestion
+    }
+    return `chai order ${kind} is here` // yaha no wale
+}
+
+// can make custom types
+type chaiOrder={
+    type:string,
+    sugar:number
+}
+//this function will return true is obj is of our req data type
+function isChaiOrder(obj :any):obj is chaiOrder{
+    return(
+        typeof obj==="object" &&
+        obj!==null &&
+        typeof obj.type==="string" &&
+        typeof obj.sugar==="number"
+    )
+}
+//in actual function after getting true response we can use .type .sugar methods  not thinking whether they exist or not
+function serveOrder(item:chaiOrder|string){
+    if(isChaiOrder(item)){
+        return `serving ${item.type} with sugar ${item.sugar}...`
+    }
+}
