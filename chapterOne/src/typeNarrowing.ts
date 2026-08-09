@@ -25,4 +25,32 @@ function serveOrder(item:chaiOrder|string){
     if(isChaiOrder(item)){
         return `serving ${item.type} with sugar ${item.sugar}...`
     }
+    // ye wala item string h
+    return `serving custom chai ${item}`
 }
+
+// better way without functions 
+
+type MasalaChai={type:"masala",spicelevel:number}
+type gingerChai={type:"ginger",amount:number}
+type elaichiChai={type:"elaichi",aroma:number}
+
+type Chai=MasalaChai|gingerChai|elaichiChai
+
+function makeChai(order:Chai){
+    switch (order.type) {
+        case "masala":// cases me teeno masla ginger ye hi suggest karega 
+            return `Masala chai with spicelevel ${order.spicelevel}` // isme .spicelevel hi suggest karega
+            break;
+    
+        case "elaichi":
+            return `Masala chai with spicelevel ${order.aroma}`  // isme .aroma hi suggest karega
+            break;
+    
+        case "ginger":
+            return `Masala chai with spicelevel ${order.amount}`
+            break;
+    }
+}
+
+// unknown type is used inplace of any 
