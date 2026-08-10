@@ -54,3 +54,19 @@ function makeChai(order:Chai){
 }
 
 // unknown type is used inplace of any 
+
+let value:any 
+value="mejkb"
+value=[1,34,3]
+value=2.5
+value.toUppercase()      // ye yaha koi error nhi de rha par 2.5 par touppercase laga rhe h toh code phat jaega
+
+let NewValue:unknown
+NewValue="mejkb"
+NewValue=[1,34,3]
+NewValue=2.5
+NewValue.toUppercase()   // yaha error de dega 
+
+if(typeof NewValue==="string"){  // aise use karo 
+   NewValue.toUpperCase()
+}
