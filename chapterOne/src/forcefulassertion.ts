@@ -58,3 +58,8 @@ function checkRole(role:Role):void{    // void jab func kuch return na kare
 function neverReturn():never{   // function bhi never type ke hote h( infinitely running func ka)
     while(true){}
 }
+
+//--------------------------input/div aise elements ka datatype-----------------------------------
+const input = document.getElementById("username") as HTMLInputElement   // ab ye htmlinputelement data type ka h varna ye normal
+//  htmlelement type ka hota ab specific input type ka h 
+// aise hi body,button, anchor har kisi ka datatype defined h

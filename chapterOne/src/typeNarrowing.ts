@@ -65,7 +65,7 @@ let NewValue:unknown
 NewValue="mejkb"
 NewValue=[1,34,3]
 NewValue=2.5
-NewValue.toUppercase()   // yaha error de dega 
+// NewValue.toUppercase()   yaha error de dega newValue is of type unknown
 
 if(typeof NewValue==="string"){  // aise use karo 
    NewValue.toUpperCase()
