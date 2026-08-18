@@ -1,4 +1,9 @@
-import axios,{AxiosResponse, isAxiosError} from "axios"
+// import axios,{AxiosResponse, isAxiosError} from "axios"      isme suggestio dega ki AxiosResponse ek type hai isko type ki 
+// tarah import karo toh 
+import axios from "axios"
+import type {AxiosResponse} from "axios"
+
+
 // Note;-> Axios ke Datatypes Generics hote h 
 interface Todo{
   userId: number,
